@@ -1,0 +1,387 @@
+/* .navbar {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  background: #000;
+}
+
+.navbar .logo {
+  display: flex;
+  width: 20%;
+  height: 100px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 23px;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-left: 5px;
+}
+
+.navbar .menu {
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: bold;
+}
+
+.navbar .menu li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.navbar .menu li .inicio {
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  position: relative;
+  display: block;
+  text-transform: uppercase;
+  padding: 7px 10px;
+  font-size: 15px;
+  transition: 0.3s ease;
+}
+
+.navbar .menu li a .icon {
+  font-size: 25px;
+  margin-bottom: -5px;
+  margin-right: 4px;
+}
+
+.navbar .menu li .inicio:hover {
+  color: #f98080;
+}
+
+.navbar .menu li .inicio::before {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #f98080;
+  transition: width 0.3s ease;
+}
+
+.navbar .menu li .inicio:hover::before {
+  width: 100%;
+}
+
+.navbar .menu li .activateHome {
+  border-bottom: 1px solid #f98080;
+  color: #f98080;
+}
+
+.navbar .menu li .historial {
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  position: relative;
+  display: block;
+  text-transform: uppercase;
+  padding: 7px 10px;
+  font-size: 15px;
+}
+
+.navbar .menu li .historial:hover {
+  color: #90caf9;
+}
+
+.navbar .menu li .historial::before {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #90caf9;
+  transition: width 0.3s ease;
+}
+
+.navbar .menu li .historial:hover::before {
+  width: 100%;
+}
+
+.navbar .menu li .activateHistory {
+  border-bottom: 1px solid #90caf9;
+  color: #90caf9;
+}
+
+.navbar .menu li .viajes {
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  position: relative;
+  display: block;
+  text-transform: uppercase;
+  padding: 7px 10px;
+  font-size: 15px;
+}
+
+.navbar .menu li .viajes:hover {
+  color: #8da2fb;
+}
+
+.navbar .menu li .viajes::before {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #8da2fb;
+  transition: width 0.3s ease;
+}
+
+.navbar .menu li .viajes:hover::before {
+  width: 100%;
+}
+
+.navbar .menu li .activateTravels {
+  border-bottom: 1px solid #8da2fb;
+  color: #8da2fb;
+}
+
+.navbar .menu li .reservas {
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  position: relative;
+  display: block;
+  text-transform: uppercase;
+  padding: 7px 10px;
+  font-size: 15px;
+}
+
+.navbar .menu li .reservas:hover {
+  color: #4caf50;
+}
+
+.navbar .menu li .reservas::before {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #4caf50;
+  transition: width 0.3s ease;
+}
+
+.navbar .menu li .reservas:hover::before {
+  width: 100%;
+}
+
+.navbar .menu li .activateReservations {
+  border-bottom: 1px solid #4caf50;
+  color: #4caf50;
+}
+
+.navbar .menu li .carrito {
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  position: relative;
+  display: block;
+  text-transform: uppercase;
+  padding: 7px 10px;
+  font-size: 15px;
+}
+
+.navbar .menu li .carrito::before {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #2196f3;
+  transition: width 0.3s ease;
+}
+
+.navbar .menu li .carrito:hover {
+  color: #2196f3;
+}
+
+.navbar .menu li .carrito:hover::before {
+  width: 100%;
+}
+
+.navbar .menu li .activateReservationStatus {
+  color: #2196f3;
+  border-bottom: 1px solid #2196f3;
+}
+
+.navbar .cerrarSesion {
+  width: 30%;
+  height: 50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.navbar .cerrarSesion li {
+  width: 100%;
+  list-style: none;
+  font-size: 20px;
+  text-align: center;
+}
+
+.navbar .cerrarSesion li .cerrarSesion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  position: relative;
+  width: 90%;
+  background: #e91e1e;
+  font-family: "Cascadia Code", Consolas, "Courier New", monospace;
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+
+.navbar .cerrarSesion li .cerrarSesion:hover {
+  background: rgb(184, 40, 40);
+}
+
+.navbar .cerrarSesion li .cerrarSesion .icon {
+  margin-right: 3px;
+  font-size: 25px;
+}
+
+.navbar .btn-menu {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+}
+
+.navbar .btn-menu .icon-menu {
+  font-size: 25px;
+}
+
+.linea {
+  width: 90%;
+  margin-top: -10px;
+}
+
+@media screen and (max-width: 930px) {
+  .navbar {
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .navbar .btn-menu {
+    display: inline-flex;
+  }
+  .navbar .menu {
+    position: fixed;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100% - 74px);
+    background: steelblue;
+    left: 100%;
+    top: 74px;
+    text-align: center;
+    transition: left 0.3s;
+    overflow: auto;
+  }
+  .navbar .openNavbar {
+    left: 0;
+  }
+  .navbar .menu li {
+    margin-right: 60px;
+  }
+  .navbar .cerrarSesion{
+    width: 50%;
+  }
+  .navbar .cerrarSesion li .cerrarSesion {
+    width: 100%;
+  }
+
+  
+}
+
+@media screen and (max-width: 530px) {
+  .navbar{
+    width: 100% !important;
+  }
+  .navbar .logo{
+    margin-left: 100px;
+  }
+  .navbar .btn-menu{
+    margin-left: 50px;
+  }
+}
+@media screen and (max-width: 320px){
+  .navbar .menu {
+    flex-wrap: wrap;
+  }
+} */
+
+.navbar {
+  color: gray;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid rgb(173, 173, 173);
+}
+
+.logo {
+  padding: 2rem;
+  width: 30%;
+}
+
+.menu {
+  padding: 2rem;
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  margin-right: 20px;
+}
+
+.menu li a {
+  color: rgb(59, 59, 59);
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.icon{
+  font-size: 1.5rem;
+  margin-right: 5px;
+}
+
+.navbar .menu li a:hover {
+  color: #f98080;
+}
+
+@media only screen and (max-width: 768px) {
+  .menu {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {}
+
