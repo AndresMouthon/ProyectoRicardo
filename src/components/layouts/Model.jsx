@@ -7,9 +7,9 @@ export default function Model() {
   return (
     <>
       <Navbar />
-      <div className='containerLayout'>
+      <ContainerContent>
         <Outlet />
-      </div>
+      </ContainerContent>
     </>
   )
 }

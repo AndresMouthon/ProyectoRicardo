@@ -5,7 +5,7 @@ import RightLoginComponent from '../../../components/public/login/RightLoginComp
 export default function LoginPage() {
   return (
     <div className="login-container">
-      <LeftBienvenidaComponent title = "Iniciar sesion" />
+      <LeftBienvenidaComponent title = "Iniciar sesion" className="login" />
       <RightLoginComponent />
     </div>
   )

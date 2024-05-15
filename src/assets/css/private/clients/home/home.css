@@ -1,0 +1,13 @@
+.homeClientContainer {
+  display: flex;
+  width: 90%;
+  padding: 50px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+@media screen and (max-width: 768px) {
+  .homeClientContainer {
+    padding: 20px;
+  }
+}

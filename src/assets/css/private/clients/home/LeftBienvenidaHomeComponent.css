@@ -1,0 +1,85 @@
+.bienvenidaHomeContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  width: 50%;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.bienvenidaHomeContainer .title {
+  font-size: 48px;
+  font-style: italic;
+  font-weight: bold;
+  line-height: normal;
+}
+
+.bienvenidaHomeContainer .text {
+  font-size: 20px;
+  font-style: normal;
+  line-height: normal;
+}
+
+.bienvenidaHomeContainer .btnGroup {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+}
+
+.bienvenidaHomeContainer .btnGroup .link .btnReservation {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+  width: 12rem;
+  height: 45px;
+  border-radius: 20px;
+  font-family: "Cascadia Code", Consolas, "Courier New", monospace;
+  font-style: italic;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: none;
+}
+
+.bienvenidaHomeContainer .btnGroup .link .btnMyAccount {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+  width: 12rem;
+  height: 45px;
+  border-radius: 20px;
+  font-family: "Cascadia Code", Consolas, "Courier New", monospace;
+  font-style: italic;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: none;
+}
+.bienvenidaHomeContainer .btnGroup .link .btnMyAccount .imgIcon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+.bienvenidaHomeContainer .btnGroup .link .btnMyAccount .imgIcon img {
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .bienvenidaHomeContainer .btnGroup {
+    flex-wrap: wrap;
+    margin: 0 0 10px 0;
+  }
+  .bienvenidaHomeContainer .btnGroup .btnReservation {
+    margin: 0 0 10px 0;
+  }
+}
+@media (max-width: 575px) {
+  .bienvenidaHomeContainer {
+    width: 100%;
+  }
+}

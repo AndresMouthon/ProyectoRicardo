@@ -1,9 +1,11 @@
 import React from 'react';
-import ContainerContent from '../../../../components/layouts/ContainerContent';
 import HomeClientComponent from '../../../../components/private/clients/home/HomeClientComponent';
+import Container from '../../../../utils/containers/Container';
 
 export default function HomeClientPage() {
   return (
+    <Container>
       <HomeClientComponent />
+    </Container>
   )
 }
