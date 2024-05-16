@@ -8,19 +8,19 @@ export default function RightRegisterComponent() {
         <section className="login"><br />
             <fieldset className="input-group">
                 <label form="user"><FaKeyboard className='icon' /> Nombres</label>
-                <input type="text" name="user" id="user" placeholder="Ingresa tu nombre..." />
+                <input type="text" name="nombre" placeholder="Ingresa tu nombre..." />
             </fieldset>
             <fieldset className="input-group">
                 <label form="user"><FaKeyboard className='icon' /> Apellidos</label>
-                <input type="text" name="user" id="user" placeholder="Ingresa tu usuario..." />
+                <input type="text" name="apellido" placeholder="Ingresa tu usuario..." />
             </fieldset>
             <fieldset className="input-group">
                 <label form="user"><FaUser className='icon' /> Usuario</label>
-                <input type="text" name="user" id="user" placeholder="Ingresa tu usuario..." />
+                <input type="text" name="usuario" placeholder="Ingresa tu usuario..." />
             </fieldset>
             <fieldset className="input-group">
                 <label form="user"><FaLock className='icon' /> Contraseña</label>
-                <input type="password" name="user" id="user" placeholder="Ingresa tu contraseña..." />
+                <input type="password" name="clave" placeholder="Ingresa tu contraseña..." />
             </fieldset>
             <Link to={PUBLICRUTAS.LOGIN} className='link'>
                 <button type="submit" className="btn-login">Registrar</button>

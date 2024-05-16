@@ -10,5 +10,6 @@ export const CUSTOMERRUTAS = {
     HISTORY: "history",
     TRAVELS: "travels",
     RESERVATIONS: "reservations",
-    RESERVATIONSTATUS: "reservationStatus"
+    RESERVATIONSTATUS: "reservationStatus",
+    MYACCOUNT: "myAccount",
 }

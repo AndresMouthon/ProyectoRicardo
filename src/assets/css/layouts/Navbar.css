@@ -257,6 +257,7 @@
 .linea {
   width: 90%;
   margin-top: -1px;
+  border-color: #f3c16d;
 }
 
 @media only screen and (max-width: 768px) {
@@ -277,6 +278,7 @@
     top: 90px;
     transition: left 0.3s;
     overflow: auto;
+    z-index: 1;
   }
   .navbar .openNavbar {
     left: 0;

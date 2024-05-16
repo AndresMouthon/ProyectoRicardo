@@ -10,11 +10,11 @@ export default function RightLoginComponent() {
       <h1>Terminal de transporte</h1>
       <fieldset className="input-group">
         <label form="user"><FaUser className='icon' /> Usuario</label>
-        <input type="text" name="user" id="user" placeholder="Ingresa tu usuario..." />
+        <input type="text" name="usuario" placeholder="Ingresa tu usuario..." />
       </fieldset>
       <fieldset className="input-group">
         <label form="user"><FaLock className='icon' /> Contraseña</label>
-        <input type="password" name="user" id="user" placeholder="Ingresa tu contraseña..." />
+        <input type="password" name="clave" placeholder="Ingresa tu contraseña..." />
       </fieldset>
       <Link to={PATHS.CLIENTE + "/" + CUSTOMERRUTAS.HOME} className='link'>
         <button type="submit" className="btn-login">Iniciar sesion</button>

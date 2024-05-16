@@ -1,0 +1,146 @@
+.myAccountContainter {
+  margin-top: 6rem;
+  display: flex;
+  width: 50%;
+  padding: 10px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  background: #f3c16d;
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
+  height: 30vh;
+}
+.myAccountContainter .profile {
+  width: 30%;
+  height: 100%;
+  border-radius: 100%;
+}
+.myAccountContainter .profile img {
+  width: 100%;
+  height: 100%;
+}
+.myAccountContainter .information {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 69%;
+  height: 100%;
+}
+.myAccountContainter .information h1 {
+  height: auto;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 20px;
+  font-weight: bold;
+}
+.myAccountContainter .information .referringInformation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 84%;
+}
+.myAccountContainter .information .referringInformation .personalInformation {
+  width: 95%;
+}
+.myAccountContainter
+  .information
+  .referringInformation
+  .personalInformation
+  h4 {
+  margin: 20px 0 0 0;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  font-family: "Courier New", Courier, monospace;
+}
+.myAccountContainter
+  .information
+  .referringInformation
+  .personalInformation
+  .icon {
+  margin-right: 10px;
+}
+.myAccountContainter .information .referringInformation .logo {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5%;
+  height: 40%;
+  rotate: -90deg;
+  z-index: 0;
+}
+.myAccountContainter .information .referringInformation .logo h1{
+  font-style: italic;
+}
+@media screen and (max-width: 1024px) {
+  .myAccountContainter {
+    width: 60%;
+  }
+  .myAccountContainter .information .referringInformation .logo {
+    height: 35%;
+  }
+}
+@media screen and (max-width: 946px) {
+  .myAccountContainter {
+    width: 65%;
+  }
+  .myAccountContainter .information .referringInformation .logo {
+    height: 35%;
+  }
+}
+@media screen and (max-width: 868px) {
+  .myAccountContainter {
+    width: 70%;
+  }
+  .myAccountContainter .information .referringInformation .logo {
+    height: 35%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .myAccountContainter {
+    width: 77%;
+  }
+  .myAccountContainter .information .referringInformation .logo {
+    height: 35%;
+  }
+}
+@media screen and (max-width: 736px) {
+  .myAccountContainter {
+    width: 90%;
+  }
+  .myAccountContainter .information .referringInformation .logo {
+    height: 35%;
+  }
+}
+@media screen and (max-width: 634px) {
+  .myAccountContainter {
+    width: 100%;
+  }
+  .myAccountContainter .information .referringInformation .logo {
+    height: 35%;
+  }
+}
+@media screen and (max-width: 595px) {
+  .myAccountContainter {
+    width: 100%;
+    border-radius: 5px;
+    align-items: center;
+    height: 100%;
+    flex-direction: column;
+  }
+
+  .myAccountContainter .information h1 {
+    margin: 10px 0 0 0;
+  }
+
+  .myAccountContainter .information .referringInformation {
+    flex-direction: column;
+    width: 100%;
+  }
+  .myAccountContainter .information .referringInformation .logo {
+    rotate: none;
+  }
+}

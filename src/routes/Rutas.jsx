@@ -9,6 +9,7 @@ import ReservationsClientPage from '../pages/private/clients/reservations/Reserv
 import TravelsClientPage from '../pages/private/clients/travels/TravelsClientPage';
 import LoginPage from "../pages/public/login/LoginPage";
 import RegisterPage from "../pages/public/register/RegisterPage";
+import MyAccountClientPage from '../pages/private/clients/myAccount/MyAccountClientPage';
 
 export default function Rutas() {
     return (
@@ -23,6 +24,7 @@ export default function Rutas() {
                         <Route path={CUSTOMERRUTAS.TRAVELS} element={<TravelsClientPage />} />
                         <Route path={CUSTOMERRUTAS.RESERVATIONS} element={<ReservationsClientPage />} />
                         <Route path={CUSTOMERRUTAS.RESERVATIONSTATUS} element={<ReservationsStatusClientPage />} />
+                        <Route path={CUSTOMERRUTAS.MYACCOUNT} element={<MyAccountClientPage />} />
                     </Route>
                 </Route>
             </Routes>
