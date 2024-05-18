@@ -4,6 +4,10 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  position: fixed;
+  background: linear-gradient(90deg, #13072e 0%, #3f2182 61.5%);
+  top: 0;
+  border-bottom: 2px solid #f3c16d;
 }
 
 .logo {
@@ -12,7 +16,6 @@
 }
 
 .navbar .menu {
-  align-items: center;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: bold;
@@ -216,30 +219,29 @@
 }
 
 .navbar .menu li .cerrarSesion {
-  cursor: pointer;
-  text-decoration: none;
-  color: red;
-  position: relative;
-  display: block;
-  text-transform: uppercase;
-  padding: 7px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: red;
+  width: 10rem;
+  height: 40px;
   font-size: 15px;
+  text-transform: uppercase;
   transition: 0.3s ease;
+  text-decoration: none;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 1px solid red;
 }
 
-.navbar .menu li .cerrarSesion::before {
-  content: "";
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background-color: red;
-  transition: width 0.3s ease;
+.navbar .menu li .cerrarSesion .icon {
+  margin-bottom: 2px;
 }
 
-.navbar .menu li .cerrarSesion:hover::before {
-  width: 100%;
+.navbar .menu li .cerrarSesion:hover {
+  background: white;
+  color: red;
 }
 
 .icon {
@@ -252,12 +254,6 @@
   border: none;
   cursor: pointer;
   display: none;
-}
-
-.linea {
-  width: 90%;
-  margin-top: -1px;
-  border-color: #f3c16d;
 }
 
 @media only screen and (max-width: 768px) {
@@ -278,7 +274,7 @@
     top: 90px;
     transition: left 0.3s;
     overflow: auto;
-    z-index: 1;
+    z-index: 1000 !important;
   }
   .navbar .openNavbar {
     left: 0;

@@ -1,17 +1,18 @@
 import React from 'react';
-import { IoLogOutSharp } from "react-icons/io5";
 import {
   FcFinePrint,
   FcHome,
   FcInfo,
+  FcList,
   FcPaid,
   FcTimeline
 } from "react-icons/fc";
+import { IoLogOutSharp } from "react-icons/io5";
 import { Link, useLocation } from 'react-router-dom';
 import '../../assets/css/layouts/Navbar.css';
-import { CUSTOMERRUTAS, PATHS, PUBLICRUTAS } from '../../models/RoutesModels';
-import { FcList } from "react-icons/fc";
 import useNavbar from '../../hooks/layouts/useNavbar';
+import useAuth from '../../hooks/public/useAuth';
+import { CUSTOMERRUTAS, PATHS } from '../../models/RoutesModels';
 
 export default function Navbar() {
 
@@ -20,7 +21,7 @@ export default function Navbar() {
     toggleNavbar,
     isNavbarOpen,
   } = useNavbar();
-
+  const { cerrarSesion } = useAuth();
   return (
     <>
       <nav className="navbar">
@@ -59,19 +60,16 @@ export default function Navbar() {
             </Link>
           </li>
           <li>
-            <Link to={PUBLICRUTAS.LOGIN} className="cerrarSesion">
+            <button onClick={cerrarSesion} className="cerrarSesion">
               <IoLogOutSharp className="icon" />
               Logout
-            </Link>
+            </button>
           </li>
         </ul>
         <button className="btn-menu" onClick={toggleNavbar}>
           <FcList className='icon-menu' />
         </button>
       </nav >
-      <center>
-        <hr className="linea" />
-      </center>
     </>
   )
 }

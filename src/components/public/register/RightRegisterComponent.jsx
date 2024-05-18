@@ -22,9 +22,7 @@ export default function RightRegisterComponent() {
                 <label form="user"><FaLock className='icon' /> Contraseña</label>
                 <input type="password" name="clave" placeholder="Ingresa tu contraseña..." />
             </fieldset>
-            <Link to={PUBLICRUTAS.LOGIN} className='link'>
                 <button type="submit" className="btn-login">Registrar</button>
-            </Link>
             <Link to={PUBLICRUTAS.LOGIN} className="registrarse">¡Iniciar sesion!</Link><br />
         </section>
     )

@@ -51,14 +51,14 @@
 .login .input-group input:focus {
   outline: #3f2182 4px solid;
 }
-.link {
+/* .link {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 90%;
   text-decoration: none;
-}
-.login .link .btn-login {
+} */
+.login .btn-login {
   width: 50%;
   height: 50px;
   background-color: #3f2182;
@@ -72,7 +72,7 @@
   border-radius: 10px;
   transition: 0.3s all;
 }
-.login .link .btn-login:hover {
+.login .btn-login:hover {
   color: #3f2182;
   background-color: #ffffff;
   border: 1px solid #3f2182;

@@ -9,6 +9,7 @@
   background-blend-mode: overlay;
   background-size: cover;
   background-position: center;
+  margin-top: 7.5rem;
 }
 .titleContent h1 {
     color: white;

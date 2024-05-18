@@ -1,5 +1,5 @@
 .myAccountContainter {
-  margin-top: 6rem;
+  margin-top: 12rem;
   display: flex;
   width: 50%;
   padding: 10px;
@@ -11,6 +11,7 @@
   border-top-left-radius: 100px;
   border-bottom-left-radius: 100px;
   height: 30vh;
+  z-index: -2;
 }
 .myAccountContainter .profile {
   width: 30%;
@@ -70,7 +71,7 @@
   width: 5%;
   height: 40%;
   rotate: -90deg;
-  z-index: 0;
+  z-index: -1;
 }
 .myAccountContainter .information .referringInformation .logo h1{
   font-style: italic;
@@ -125,6 +126,7 @@
 }
 @media screen and (max-width: 595px) {
   .myAccountContainter {
+    margin-top: 7rem;
     width: 100%;
     border-radius: 5px;
     align-items: center;

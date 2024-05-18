@@ -17,13 +17,13 @@ export default function LeftBienvenidaHomeComponent() {
         nuestro objetivo es hacer que tu proceso de reserva sea lo más sencillo y agradable posible.
       </p><br />
       <section className='btnGroup'>
-        <Link to={"/" + PATHS.CLIENTE + "/" + CUSTOMERRUTAS.TRAVELS} className='link'>
+        <Link to={"/" + PATHS.CLIENTE + "/" + CUSTOMERRUTAS.TRAVELS} className='link' style={{ textDecoration: 'none' }}>
           <button type='submit' className='btnReservation'>
             Reservar viaje
             <FaChevronRight />
           </button>
         </Link>
-        <Link to={"/" + PATHS.CLIENTE + "/" + CUSTOMERRUTAS.MYACCOUNT} className='link'>
+        <Link to={"/" + PATHS.CLIENTE + "/" + CUSTOMERRUTAS.MYACCOUNT} className='link' style={{ textDecoration: 'none' }}>
           <button type='submit' className='btnMyAccount'>
             Mi cuenta
             <div className='imgIcon'>
