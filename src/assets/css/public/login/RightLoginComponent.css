@@ -51,13 +51,6 @@
 .login .input-group input:focus {
   outline: #3f2182 4px solid;
 }
-/* .link {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 90%;
-  text-decoration: none;
-} */
 .login .btn-login {
   width: 50%;
   height: 50px;

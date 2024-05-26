@@ -2,8 +2,8 @@ import React from 'react';
 import { FaLock, FaUser } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import '../../../assets/css/public/login/RightLoginComponent.css';
-import { CUSTOMERRUTAS, PATHS, PUBLICRUTAS } from '../../../models/RoutesModels';
 import useAuth from '../../../hooks/public/useAuth';
+import { PUBLICRUTAS } from '../../../models/RoutesModels';
 
 export default function RightLoginComponent() {
   const { handleChange, iniciarSesion } = useAuth();
@@ -18,7 +18,7 @@ export default function RightLoginComponent() {
         <label form="user"><FaLock className='icon' /> Contraseña</label>
         <input type="password" name="clave" placeholder="Ingresa tu contraseña..." onChange={handleChange} required />
       </fieldset>
-        <button onClick={iniciarSesion} className="btn-login">Iniciar sesion</button>
+      <button onClick={iniciarSesion} className="btn-login">Iniciar sesion</button>
       <Link to={PUBLICRUTAS.REGISTRO} className="registrarse">¡Registrate aqui!</Link><br></br>
     </section>
   )
