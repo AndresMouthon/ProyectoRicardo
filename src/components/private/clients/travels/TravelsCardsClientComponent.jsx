@@ -1,17 +1,18 @@
 import React from 'react';
 import { FaCity } from "react-icons/fa6";
+import { IoEyeSharp } from "react-icons/io5";
 import '../../../../assets/css/private/clients/travels/TravelsCardsClientComponent.css';
 import { APIUSER } from '../../../../models/EnpointsModels';
 import TravelsOptionsClientComponent from './TravelsOptionsClientComponent';
 
-export default function TravelsCardsClientComponent({ viajes }) {
+export default function TravelsCardsClientComponent({ viajes, agregarReservaLocalStorage }) {
     return (
         <div className='cardContainer'>
             <div className="card">
                 <TravelsOptionsClientComponent />
             </div>
             {viajes.map((viaje) => (
-                <div className="card">
+                <div key={viaje.codigo} className="card">
                     <section className='imgCity'>
                         <img src={APIUSER.RUTAFRONT + viaje.imagen} alt={APIUSER.RUTAFRONT + viaje.imagen} />
                     </section>
@@ -19,10 +20,16 @@ export default function TravelsCardsClientComponent({ viajes }) {
                         <h1>{viaje.ciudad}</h1>
                         <span className='footerGroup'>
                             <p>$ {viaje.precio}</p>
-                            <button>
-                                <FaCity className="icon" />
-                                Reservar
-                            </button>
+                            <div className='btnGroup'>
+                                <button className='addCity' onClick={() => agregarReservaLocalStorage(viaje)}>
+                                    <FaCity className="icon"/>
+                                    Add
+                                </button>
+                                <button className="viewdetail">
+                                    <IoEyeSharp className="icon" />
+                                    view
+                                </button>
+                            </div>
                         </span>
                     </section>
                 </div>

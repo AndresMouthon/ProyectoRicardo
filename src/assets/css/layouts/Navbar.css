@@ -7,7 +7,7 @@
   position: fixed;
   background: linear-gradient(90deg, #13072e 0%, #3f2182 61.5%);
   top: 0;
-  border-bottom: 2px solid #f3c16d;
+  border-bottom: 2px solid white;
 }
 
 .logo {
@@ -195,7 +195,7 @@
 }
 
 .navbar .menu li .estado:hover {
-  color: #2196f3;
+  color: #FFB74D;
 }
 
 .navbar .menu li .estado::before {
@@ -205,7 +205,7 @@
   left: 0;
   width: 0;
   height: 1px;
-  background-color: #2196f3;
+  background-color: #FFB74D;
   transition: width 0.3s ease;
 }
 
@@ -214,8 +214,8 @@
 }
 
 .navbar .menu li .activateReservationStatus {
-  color: #2196f3;
-  border-bottom: 1px solid #2196f3;
+  color: #FFB74D;
+  border-bottom: 1px solid #FFB74D;
 }
 
 .navbar .menu li .cerrarSesion {
@@ -240,7 +240,7 @@
 }
 
 .navbar .menu li .cerrarSesion:hover {
-  background: white;
+  background: transparent;
   color: red;
 }
 

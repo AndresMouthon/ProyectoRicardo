@@ -1,0 +1,19 @@
+.imagenContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    height: 70vh;
+}
+.imagenContainer img {
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+@media (max-width: 575px) {
+    .imagenContainer {
+        width: 100%;
+    }
+}

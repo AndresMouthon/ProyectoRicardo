@@ -10,6 +10,9 @@ export const CUSTOMERRUTAS = {
     HISTORY: "history",
     TRAVELS: "travels",
     RESERVATIONS: "reservations",
+    RESERVATIONRUTAS: {
+        CONTINUERESERVATION: "continueReservation",
+    },
     RESERVATIONSTATUS: "reservationStatus",
     MYACCOUNT: "myAccount",
 }

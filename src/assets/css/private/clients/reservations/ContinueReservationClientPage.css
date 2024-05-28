@@ -1,0 +1,13 @@
+.continueReservationContainer {
+  margin-top: 9rem;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+/* @media screen and (max-width: 768px) {
+    .continueReservationContainer {
+      padding: 20px;
+    }
+  } */

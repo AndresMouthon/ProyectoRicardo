@@ -14,7 +14,6 @@ export default function useViaje() {
                 },
             })
             .then((response) => {
-                console.log(response.data);
                 setViajes(response.data);
             })
             .catch((error) => {

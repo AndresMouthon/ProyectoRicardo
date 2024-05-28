@@ -1,0 +1,142 @@
+.reservationsContainer {
+  margin-top: 10rem;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  margin-left: 1.5rem;
+}
+.reservationsContainer .card {
+  border-radius: 5px;
+  text-align: center;
+  width: 92.2%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  height: 25rem;
+  background: rgb(219, 218, 218);
+}
+.reservationsContainer .card .imgCity {
+  width: 100%;
+  height: 50%;
+}
+.reservationsContainer .card .imgCity img {
+  width: 100%;
+  height: 100%;
+}
+.reservationsContainer .card .informationCity {
+  padding: 10px;
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.reservationsContainer .card .informationCity .informationGroup {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 90%;
+}
+.reservationsContainer .card .informationCity .iconIdentification {
+  font-size: 20px;
+  margin-right: 10px;
+  color: rgb(128, 126, 0);
+}
+.reservationsContainer .card .informationCity .textIdentification {
+  color: rgb(128, 126, 0);
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.reservationsContainer .card .informationCity .iconCity {
+  font-size: 20px;
+  margin-right: 10px;
+  color: rgb(0, 19, 128);
+}
+.reservationsContainer .card .informationCity .textCity {
+  color: rgb(0, 19, 128);
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.reservationsContainer .card .informationCity .iconMoney {
+  font-size: 20px;
+  margin-right: 10px;
+  color: rgb(128, 0, 0);
+}
+.reservationsContainer .card .informationCity .textMoney {
+  color: rgb(128, 0, 0);
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.reservationsContainer .card .btnGroup {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+}
+.reservationsContainer .card .btnGroup .finalizaReservation {
+  width: 38%;
+  border: 1px solid green;
+  font-size: 13px;
+  height: 1.9rem;
+  font-weight: bold;
+  font-family: "Cascadia Code", Consolas, "Courier New", monospace;
+  padding: 0 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  background: transparent;
+  color: green;
+  border-top-left-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-decoration: none;
+}
+.reservationsContainer .card .btnGroup .finalizaReservation:hover {
+  background-color: green;
+  color: white;
+}
+.reservationsContainer .card .btnGroup .cancelReservation {
+  width: 45%;
+  border: 1px solid red;
+  font-size: 13px;
+  height: 2rem;
+  font-weight: bold;
+  font-family: "Cascadia Code", Consolas, "Courier New", monospace;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  background: transparent;
+  color: red;
+  border-bottom-right-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.reservationsContainer .card .btnGroup .cancelReservation:hover {
+  background-color: red;
+  color: white;
+}
+@media (max-width: 1200px) {
+  .reservationsContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .reservationsContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .reservationsContainer {
+    grid-template-columns: 1fr;
+  }
+}
