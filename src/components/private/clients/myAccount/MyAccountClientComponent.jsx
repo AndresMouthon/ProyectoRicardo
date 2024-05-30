@@ -5,7 +5,7 @@ import { RiAccountPinBoxFill } from "react-icons/ri";
 import '../../../../assets/css/private/clients/myAccount/MyAccountClientComponent.css';
 import profile from '../../../../assets/img/private/clients/ImagenIconoMasculino.png';
 
-export default function MyAccountClientComponent() {
+export default function MyAccountClientComponent({ cantidadReservas }) {
   const { nombre, apellido, cedula, usuario } = JSON.parse(localStorage.getItem("usuario")) || [];
   return (
     <div className='myAccountContainter'>
@@ -18,7 +18,7 @@ export default function MyAccountClientComponent() {
           <section className='personalInformation'>
             <h4><HiIdentification className='icon' /> Documento identidad: {cedula}</h4>
             <h4><RiAccountPinBoxFill className='icon' /> Usuario: {usuario}</h4>
-            <h4><MdModeOfTravel className='icon' /> Ultimo destino: 1</h4>
+            <h4><MdModeOfTravel className='icon' /> Viajes con nosotros: {cantidadReservas}</h4>
           </section>
           <section className='logo'>
             <h1>TransporTecnology</h1>

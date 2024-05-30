@@ -2,10 +2,10 @@ import React from "react";
 import {
   FcBusinessman,
   FcFinePrint,
+  FcGlobe,
   FcHome,
   FcList,
-  FcPaid,
-  FcTimeline,
+  FcPaid
 } from "react-icons/fc";
 import { IoLogOutSharp } from "react-icons/io5";
 import { Link, useLocation } from "react-router-dom";
@@ -27,9 +27,9 @@ export default function Navbar() {
             <Link
               to={PATHS.CLIENTE + "/" + CUSTOMERRUTAS.HOME}
               className={`inicio ${location.pathname.substring(1).split("/")[1] ===
-                  CUSTOMERRUTAS.HOME
-                  ? "activateHome"
-                  : ""
+                CUSTOMERRUTAS.HOME
+                ? "activateHome"
+                : ""
                 }`}
               onClick={toggleNavbar}
             >
@@ -41,9 +41,9 @@ export default function Navbar() {
             <Link
               to={PATHS.CLIENTE + "/" + CUSTOMERRUTAS.HISTORY}
               className={`historial ${location.pathname.substring(1).split("/")[1] ===
-                  CUSTOMERRUTAS.HISTORY
-                  ? "activateHistory"
-                  : ""
+                CUSTOMERRUTAS.HISTORY
+                ? "activateHistory"
+                : ""
                 }`}
               onClick={toggleNavbar}
             >
@@ -55,13 +55,13 @@ export default function Navbar() {
             <Link
               to={PATHS.CLIENTE + "/" + CUSTOMERRUTAS.TRAVELS}
               className={`viajes ${location.pathname.substring(1).split("/")[1] ===
-                  CUSTOMERRUTAS.TRAVELS
-                  ? "activateTrevols"
-                  : ""
+                CUSTOMERRUTAS.TRAVELS
+                ? "activateTrevols"
+                : ""
                 }`}
               onClick={toggleNavbar}
             >
-              <FcTimeline className="icon" />
+              <FcGlobe className="icon" />
               Viajes
             </Link>
           </li>
@@ -69,9 +69,9 @@ export default function Navbar() {
             <Link
               to={PATHS.CLIENTE + "/" + CUSTOMERRUTAS.RESERVATIONS}
               className={`reservas ${location.pathname.substring(1).split("/")[1] ===
-                  CUSTOMERRUTAS.RESERVATIONS
-                  ? "activateReservations"
-                  : ""
+                CUSTOMERRUTAS.RESERVATIONS
+                ? "activateReservations"
+                : ""
                 }`}
               onClick={toggleNavbar}
             >
@@ -83,9 +83,9 @@ export default function Navbar() {
             <Link
               to={"/" + PATHS.CLIENTE + "/" + CUSTOMERRUTAS.MYACCOUNT}
               className={`estado ${location.pathname.substring(1).split("/")[1] ===
-                  CUSTOMERRUTAS.MYACCOUNT
-                  ? "activateReservationStatus"
-                  : ""
+                CUSTOMERRUTAS.MYACCOUNT
+                ? "activateReservationStatus"
+                : ""
                 }`}
               onClick={toggleNavbar}
             >

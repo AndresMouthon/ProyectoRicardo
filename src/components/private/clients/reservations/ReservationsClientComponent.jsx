@@ -52,7 +52,6 @@ export default function ReservationsClientComponent({
               </button>
             </span>
           </section>
-          {/* <p>Reservas pendientes: {reservasLocalStorage.length}</p> */}
         </div>
       ))}
     </div>

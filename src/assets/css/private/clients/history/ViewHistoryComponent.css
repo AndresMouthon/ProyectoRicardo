@@ -1,0 +1,17 @@
+.tableContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 1rem;
+  box-shadow: 3px 3px 5px black;
+  width: 60%;
+  padding: 5px;
+}
+.btnViewReserva {
+  border: none;
+  background: transparent;
+  color: #0c8bf3;
+  cursor: pointer;
+}

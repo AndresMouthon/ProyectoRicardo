@@ -8,4 +8,5 @@ export const APIUSER = {
   RESERVATIONTIMES: "http://localhost:8080/api/horario/",
   RESERVATIONTRANSPORT: "http://localhost:8080/api/transporte/",
   CREATERESERVATION: "http://localhost:8080/api/reserva",
+  HISTORYRESERVATIONS: "http://localhost:8080/api/reserva/",
 };

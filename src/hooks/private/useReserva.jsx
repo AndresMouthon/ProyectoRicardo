@@ -7,11 +7,13 @@ export default function useReserva(id) {
 
   const [reservasLocalStorage, setReservasLocalStorage] = useState([]);
   const [reservaLocalStorage, setReservaLocalStorage] = useState({});
+  const [historialReservas, setHistorialReservas] = useState([]);
+  const [verReservaUsuario, setVerReservaUsuario] = useState({});
 
   const [reserva, setReserva] = useState({
     pasajeros: 0,
     idHorario: "",
-    placa: ""
+    placa: "",
   });
 
   function handleChange({ target }) {
@@ -127,8 +129,8 @@ export default function useReserva(id) {
         },
         transporte: {
           placa: reserva.placa,
-        }
-      }
+        },
+      };
       const response = await axios.post(
         APIUSER.CREATERESERVATION,
         nuevaReserva,
@@ -137,7 +139,7 @@ export default function useReserva(id) {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
         }
-      )
+      );
       if (response.data === "¡Usted ya tiene un viaje para esa fecha!") {
         Swal.fire({
           icon: "warning",
@@ -152,14 +154,33 @@ export default function useReserva(id) {
           title: "¡Reserva exitosa!",
           showConfirmButton: false,
           timer: 2000,
-        })
+        });
       }
     }
   };
 
+  const CargarHistorialReservasUsuario = async () => {
+    const { cedula } = JSON.parse(localStorage.getItem("usuario"));
+    const response = await axios.get(APIUSER.HISTORYRESERVATIONS + cedula, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
+    setHistorialReservas(response.data);
+  };
+
+  const verReserva = (codigoViaje) => {
+    for (let i = 0; i < historialReservas.length; i++) {
+      if (historialReservas[i].codigo === Number(codigoViaje)) {
+        setVerReservaUsuario(historialReservas[i]);
+      }
+    }
+  }
+
   useEffect(() => {
     obtenerReservaClienteLocalStorage();
     BuscarReservaLocalStorage();
+    CargarHistorialReservasUsuario();
   }, []);
 
   return {
@@ -168,7 +189,10 @@ export default function useReserva(id) {
     BuscarReservaLocalStorage,
     handleChange,
     registrarReserva,
+    verReserva,
+    verReservaUsuario,
     reservasLocalStorage,
     reservaLocalStorage,
+    historialReservas,
   };
 }

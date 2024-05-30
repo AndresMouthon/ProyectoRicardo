@@ -1,0 +1,7 @@
+.historyContent {
+    margin-top: 9rem;
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-between;
+}
