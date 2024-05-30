@@ -3,10 +3,11 @@ import { FaCity } from "react-icons/fa6";
 import { IoEyeSharp } from "react-icons/io5";
 import '../../../../assets/css/private/clients/travels/TravelsCardsClientComponent.css';
 import { APIUSER } from '../../../../models/EnpointsModels';
-import TravelsOptionsClientComponent from './TravelsOptionsClientComponent';
 import LoadingComponent from '../../../../utils/tools/LoadingComponent';
+import TravelsOptionsClientComponent from './TravelsOptionsClientComponent';
 
 export default function TravelsCardsClientComponent({ viajes, agregarReservaLocalStorage, loading }) {
+
     return (
         <div className='cardContainer'>
             <div className="card">
@@ -28,7 +29,7 @@ export default function TravelsCardsClientComponent({ viajes, agregarReservaLoca
                             <p>$ {viaje.precio}</p>
                             <div className='btnGroup'>
                                 <button className='addCity' onClick={() => agregarReservaLocalStorage(viaje)}>
-                                    <FaCity className="icon"/>
+                                    <FaCity className="icon" />
                                     Add
                                 </button>
                                 <button className="viewdetail">
@@ -42,4 +43,5 @@ export default function TravelsCardsClientComponent({ viajes, agregarReservaLoca
             ))}
         </div>
     )
+
 }

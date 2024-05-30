@@ -9,6 +9,7 @@ import '../../../../assets/css/private/clients/history/ViewReservaComponent.css'
 import { APIUSER } from '../../../../models/EnpointsModels';
 
 export default function ViewReservaComponent({ reserva }) {
+
   return (
     <div className='cardReservaContent'>
       <div className="card">
@@ -39,4 +40,5 @@ export default function ViewReservaComponent({ reserva }) {
       </div>
     </div>
   )
+  
 }
