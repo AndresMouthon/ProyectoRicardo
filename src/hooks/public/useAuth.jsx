@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
-import { APIAUTH } from '../../models/EnpointsModels';
-import { CUSTOMERRUTAS, PATHS, PUBLICRUTAS } from '../../models/RoutesModels';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import axios from "axios";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import { APIAUTH } from "../../models/EnpointsModels";
+import { CUSTOMERRUTAS, PATHS, PUBLICRUTAS } from "../../models/RoutesModels";
 
 export default function useAuth() {
 
@@ -16,6 +16,7 @@ export default function useAuth() {
         usuario: "",
         nombre: "",
     });
+
     const recargar = () => {
         setUsuario({
             cedula: "",
@@ -25,12 +26,14 @@ export default function useAuth() {
             nombre: "",
         });
     };
+
     function handleChange({ target }) {
         setUsuario({
             ...usuario,
             [target.name]: target.value,
         });
     };
+
     const iniciarSesion = async () => {
         delete usuario.cedula;
         delete usuario.apellido;
@@ -39,12 +42,11 @@ export default function useAuth() {
             const options = {
                 headers: {
                     "Content-Type": "application/json",
-                }
-            }
+                },
+            };
             const response = await axios.post(APIAUTH.LOGIN, usuario, options);
 
             if (response.data.status) {
-
                 localStorage.setItem("token", response.data.token);
                 response.data.usuario.clave = "Privado";
                 localStorage.setItem("usuario", JSON.stringify(response.data.usuario));
@@ -60,8 +62,7 @@ export default function useAuth() {
                 navigate(PATHS.CLIENTE + "/" + CUSTOMERRUTAS.HOME);
             } else {
                 Swal.fire({
-                    icon: "error",
-                    title: "¡Error!",
+                    icon: "warning",
                     text: "Datos incorrectos...",
                     showConfirmButton: false,
                     timer: 1000,
@@ -78,6 +79,7 @@ export default function useAuth() {
             console.log("Credenciales incorrectas");
         }
     };
+
     const registrarUsuario = async () => {
         if (
             usuario.cedula === "" ||
@@ -87,8 +89,8 @@ export default function useAuth() {
             usuario.nombre === ""
         ) {
             Swal.fire({
-                icon: "error",
-                title: "¡Error!",
+                icon: "info",
+                title: "¡Cuidado!",
                 text: "Todos los campos son obligatorios...",
                 showConfirmButton: false,
                 timer: 1000,
@@ -98,8 +100,8 @@ export default function useAuth() {
                 const options = {
                     headers: {
                         "Content-Type": "application/json",
-                    }
-                }
+                    },
+                };
                 const response = await axios.post(APIAUTH.REGISTER, usuario, options);
                 if (response.data) {
                     Swal.fire({
@@ -119,15 +121,17 @@ export default function useAuth() {
                     text: `${error.response.data}`,
                     showConfirmButton: false,
                     timer: 2000,
-                })
+                });
             }
         }
-    }
+    };
+
     const cerrarSesion = () => {
         localStorage.removeItem("token");
         localStorage.removeItem("usuario");
         navigate(PUBLICRUTAS.LOGIN);
     };
+
     return {
         handleChange,
         iniciarSesion,

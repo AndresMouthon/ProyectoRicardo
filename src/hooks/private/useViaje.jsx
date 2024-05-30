@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react'
-import { APIUSER } from '../../models/EnpointsModels';
-import axios from 'axios';
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { APIUSER } from "../../models/EnpointsModels";
 
 export default function useViaje() {
-
     const [viajes, setViajes] = useState([]);
 
     const getViajes = () => {
@@ -27,6 +26,6 @@ export default function useViaje() {
 
     return {
         viajes,
-        setViajes
-    }
+        setViajes,
+    };
 }

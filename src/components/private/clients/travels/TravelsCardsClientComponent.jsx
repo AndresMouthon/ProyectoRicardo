@@ -27,7 +27,7 @@ export default function TravelsCardsClientComponent({ viajes, agregarReservaLoca
                                 </button>
                                 <button className="viewdetail">
                                     <IoEyeSharp className="icon" />
-                                    view
+                                    Ver
                                 </button>
                             </div>
                         </span>

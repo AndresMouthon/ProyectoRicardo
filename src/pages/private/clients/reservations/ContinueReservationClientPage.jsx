@@ -4,14 +4,31 @@ import "../../../../assets/css/private/clients/reservations/ContinueReservationC
 import FormContinueReservationClientComponent from "../../../../components/private/clients/reservations/FormContinueReservationClientComponent";
 import ImageContinueReservationClientComponent from "../../../../components/private/clients/reservations/ImageContinueReservationClientComponent";
 import useReserva from "../../../../hooks/private/useReserva";
+import useHorario from "../../../../hooks/private/useHorario";
+import useTransporte from "../../../../hooks/private/useTransporte";
 
 export default function ContinueReservationClientPage() {
+
   const { id } = useParams();
-  const { reservaLocalStorage } = useReserva(id);
-  const { imagen } = reservaLocalStorage;
+  const { reservaLocalStorage, 
+          handleChange, 
+          registrarReserva 
+        } = useReserva(id);
+  const { horariosReserva } = useHorario(id);
+  const { transporteViajes } = useTransporte(id);
+
+  const { imagen, ciudad } = reservaLocalStorage;
+
   return (
     <div className="continueReservationContainer">
-      <FormContinueReservationClientComponent />
+      <FormContinueReservationClientComponent
+        ciudad={ciudad}
+        horariosReserva={horariosReserva}
+        transporteViajes={transporteViajes}
+        handleChange={handleChange}
+        codigoViaje={id}
+        registrarReserva={registrarReserva}
+      />
       <ImageContinueReservationClientComponent imagen={imagen} />
     </div>
   );

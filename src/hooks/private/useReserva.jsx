@@ -1,9 +1,25 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
+import Swal from "sweetalert2";
+import { APIUSER } from "../../models/EnpointsModels";
 
 export default function useReserva(id) {
-  
+
   const [reservasLocalStorage, setReservasLocalStorage] = useState([]);
   const [reservaLocalStorage, setReservaLocalStorage] = useState({});
+
+  const [reserva, setReserva] = useState({
+    pasajeros: 0,
+    idHorario: "",
+    placa: ""
+  });
+
+  function handleChange({ target }) {
+    setReserva({
+      ...reserva,
+      [target.name]: target.value,
+    });
+  }
 
   const obtenerReservasLocalStorage = () =>
     JSON.parse(localStorage.getItem("reservas")) || [];
@@ -74,7 +90,70 @@ export default function useReserva(id) {
     if (id !== undefined) {
       const { cedula } = JSON.parse(localStorage.getItem("usuario"));
       let reserva = obtenerReservasLocalStorage();
-      setReservaLocalStorage(reserva.find((reserva) => Number(reserva.codigo) === Number(id) && Number(reserva.cedula) === Number(cedula)));
+      setReservaLocalStorage(
+        reserva.find(
+          (reserva) =>
+            Number(reserva.codigo) === Number(id) &&
+            Number(reserva.cedula) === Number(cedula)
+        )
+      );
+    }
+  };
+
+  const registrarReserva = async (cedula, codigoViaje) => {
+    if (
+      reserva.pasajeros === 0 ||
+      reserva.idHorario === "" ||
+      reserva.placa === ""
+    ) {
+      Swal.fire({
+        icon: "info",
+        title: "¡Cuidado!",
+        text: "Todos los campos son obligatorios...",
+        showConfirmButton: false,
+        timer: 1000,
+      });
+    } else {
+      const nuevaReserva = {
+        pasajeros: Number(reserva.pasajeros),
+        horario: {
+          idHorario: Number(reserva.idHorario),
+        },
+        usuario: {
+          cedula: cedula,
+        },
+        viaje: {
+          codigo: Number(codigoViaje),
+        },
+        transporte: {
+          placa: reserva.placa,
+        }
+      }
+      const response = await axios.post(
+        APIUSER.CREATERESERVATION,
+        nuevaReserva,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      )
+      if (response.data === "¡Usted ya tiene un viaje para esa fecha!") {
+        Swal.fire({
+          icon: "warning",
+          title: "¡Cuidado!",
+          text: response.data,
+          showConfirmButton: false,
+          timer: 2000,
+        });
+      } else {
+        Swal.fire({
+          icon: "success",
+          title: "¡Reserva exitosa!",
+          showConfirmButton: false,
+          timer: 2000,
+        })
+      }
     }
   };
 
@@ -87,6 +166,8 @@ export default function useReserva(id) {
     agregarReservaLocalStorage,
     borrarReservaLocalStorage,
     BuscarReservaLocalStorage,
+    handleChange,
+    registrarReserva,
     reservasLocalStorage,
     reservaLocalStorage,
   };
