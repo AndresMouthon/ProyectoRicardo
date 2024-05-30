@@ -64,6 +64,9 @@
   cursor: pointer;
   border-radius: 10px;
   transition: 0.3s all;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .login .btn-login:hover {
   color: #3f2182;

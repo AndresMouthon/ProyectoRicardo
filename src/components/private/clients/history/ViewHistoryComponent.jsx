@@ -1,13 +1,19 @@
 import React from 'react';
 import DataTable from "react-data-table-component";
+import { BsFillInfoCircleFill } from "react-icons/bs";
 import { CiCalendar, CiClock2, CiLocationOn } from "react-icons/ci";
 import { FaEyeSlash } from "react-icons/fa";
 import { IoEyeSharp } from "react-icons/io5";
 import { PiBusThin, PiChalkboardSimpleLight, PiMoneyThin } from "react-icons/pi";
 import '../../../../assets/css/private/clients/history/ViewHistoryComponent.css';
+import LoadingComponent from '../../../../utils/tools/LoadingComponent';
 
-export default function ViewHistoryComponent({ historialReservas, verReserva, verReservaUsuario }) {
-
+export default function ViewHistoryComponent({
+  historialReservas,
+  verReserva,
+  verReservaUsuario,
+  loading
+}) {
   const columns = [
     {
       name: (
@@ -86,7 +92,9 @@ export default function ViewHistoryComponent({ historialReservas, verReserva, ve
       <DataTable
         columns={columns}
         data={historialReservas}
-        // progressPending={loading}
+        progressPending={loading}
+        progressComponent={<LoadingComponent />}
+        noDataComponent={<div className='noData'><BsFillInfoCircleFill className="icon" /> Usted no tiene reserva</div>}
         pagination
       />
     </div>

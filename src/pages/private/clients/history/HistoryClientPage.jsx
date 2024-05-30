@@ -4,13 +4,14 @@ import HistoryClientComponent from '../../../../components/private/clients/histo
 import useReserva from '../../../../hooks/private/useReserva';
 
 export default function HistoryClientPage() {
-    const { historialReservas, verReserva, verReservaUsuario } = useReserva();
+    const { historialReservas, verReserva, verReservaUsuario, loading } = useReserva();
     return (
         <ContainerContent>
             <HistoryClientComponent
                 historialReservas={historialReservas}
                 verReserva={verReserva}
                 verReservaUsuario={verReservaUsuario}
+                loading={loading}
             />
         </ContainerContent>
     )

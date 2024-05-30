@@ -4,9 +4,10 @@ import { Link } from 'react-router-dom';
 import '../../../assets/css/public/login/RightLoginComponent.css';
 import useAuth from '../../../hooks/public/useAuth';
 import { PUBLICRUTAS } from '../../../models/RoutesModels';
+import Spiner from '../../../utils/tools/Spiner';
 
 export default function RightLoginComponent() {
-  const { handleChange, iniciarSesion } = useAuth();
+  const { handleChange, iniciarSesion, loading } = useAuth();
   return (
     <section className="login">
       <h1>Terminal de transporte</h1>
@@ -18,7 +19,7 @@ export default function RightLoginComponent() {
         <label form="user"><FaLock className='icon' /> Contraseña</label>
         <input type="password" name="clave" placeholder="Ingresa tu contraseña..." onChange={handleChange} required />
       </fieldset>
-      <button onClick={iniciarSesion} className="btn-login">Iniciar sesion</button>
+      <button onClick={iniciarSesion} className="btn-login">{loading ? <Spiner /> : "Iniciar sesion"}</button>
       <Link to={PUBLICRUTAS.REGISTRO} className="registrarse">¡Registrate aqui!</Link><br></br>
     </section>
   )

@@ -1,0 +1,40 @@
+.loading-container {
+  display: flex;
+  align-items: center;
+}
+
+.loading-text {
+  margin-right: 10px;
+  font-size: 20px;
+  color: #007bff;
+  position: relative;
+}
+
+.dot {
+  width: 15px;
+  height: 15px;
+  margin: 0 2px;
+  background-color: #007bff;
+  border-radius: 50%;
+  animation: loading 1s infinite;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes loading {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}

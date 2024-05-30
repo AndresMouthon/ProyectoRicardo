@@ -1,14 +1,19 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { APIUSER } from "../../models/EnpointsModels";
+import { CUSTOMERRUTAS, PATHS } from "../../models/RoutesModels";
 
 export default function useReserva(id) {
 
+  const navigate = useNavigate();
   const [reservasLocalStorage, setReservasLocalStorage] = useState([]);
   const [reservaLocalStorage, setReservaLocalStorage] = useState({});
   const [historialReservas, setHistorialReservas] = useState([]);
   const [verReservaUsuario, setVerReservaUsuario] = useState({});
+  const [loading, setLoading] = useState(false);
+  const [loadingButton, setLoadingButton] = useState(false);
 
   const [reserva, setReserva] = useState({
     pasajeros: 0,
@@ -116,6 +121,7 @@ export default function useReserva(id) {
         timer: 1000,
       });
     } else {
+      setLoadingButton(true);
       const nuevaReserva = {
         pasajeros: Number(reserva.pasajeros),
         horario: {
@@ -148,6 +154,7 @@ export default function useReserva(id) {
           showConfirmButton: false,
           timer: 2000,
         });
+        navigate("/" + PATHS.CLIENTE + "/" + CUSTOMERRUTAS.HISTORY);
       } else {
         Swal.fire({
           icon: "success",
@@ -155,18 +162,31 @@ export default function useReserva(id) {
           showConfirmButton: false,
           timer: 2000,
         });
+        let reserva = obtenerReservasLocalStorage();
+        let { cedula } = JSON.parse(localStorage.getItem("usuario"));
+        reserva = reserva.filter(
+          (viaje) => !(viaje.codigo === Number(codigoViaje) && viaje.cedula === cedula)
+        );
+        localStorage.setItem("reservas", JSON.stringify(reserva));
+        navigate("/" + PATHS.CLIENTE + "/" + CUSTOMERRUTAS.TRAVELS);
       }
     }
   };
 
   const CargarHistorialReservasUsuario = async () => {
+    setLoading(true);
     const { cedula } = JSON.parse(localStorage.getItem("usuario"));
     const response = await axios.get(APIUSER.HISTORYRESERVATIONS + cedula, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
     });
-    setHistorialReservas(response.data);
+    setLoading(false);
+    if (response.data === "¡Usted no tiene reserva!") {
+      console.log(response.data);
+    } else {
+      setHistorialReservas(response.data);
+    }
   };
 
   const verReserva = (codigoViaje) => {
@@ -194,5 +214,7 @@ export default function useReserva(id) {
     reservasLocalStorage,
     reservaLocalStorage,
     historialReservas,
+    loading,
+    loadingButton,
   };
 }

@@ -4,9 +4,12 @@ import { HiIdentification } from "react-icons/hi2";
 import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/public/useAuth';
 import { PUBLICRUTAS } from '../../../models/RoutesModels';
+import Spiner from '../../../utils/tools/Spiner';
 
 export default function RightRegisterComponent() {
-    const { handleChange, registrarUsuario } = useAuth();
+
+    const { handleChange, registrarUsuario, loading } = useAuth();
+
     return (
         <section className="login"><br />
             <fieldset className="input-group">
@@ -29,7 +32,7 @@ export default function RightRegisterComponent() {
                 <label form="clave"><FaLock className='icon' /> Contraseña</label>
                 <input type="password" name="clave" placeholder="Ingresa tu contraseña..." onChange={handleChange} required />
             </fieldset>
-            <button type="submit" className="btn-login" onClick={registrarUsuario}>Registrar</button>
+            <button type="submit" className="btn-login" onClick={registrarUsuario}>{loading ? <Spiner /> : "Registrar"}</button>
             <Link to={PUBLICRUTAS.LOGIN} className="registrarse">¡Iniciar sesion!</Link><br />
         </section>
     )

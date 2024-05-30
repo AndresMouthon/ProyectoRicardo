@@ -8,13 +8,19 @@ function isEmpty(obj) {
   return Object.keys(obj).length === 0 && obj.constructor === Object;
 }
 
-export default function HistoryClientComponent({ historialReservas, verReserva, verReservaUsuario }) {
+export default function HistoryClientComponent({
+  historialReservas,
+  verReserva,
+  verReservaUsuario,
+  loading,
+}) {
   return (
     <div className='historyContent'>
       <ViewHistoryComponent
         historialReservas={historialReservas}
         verReserva={verReserva}
         verReservaUsuario={verReservaUsuario}
+        loading={loading}
       />
       {verReservaUsuario && !isEmpty(verReservaUsuario) ? (
         <ViewReservaComponent reserva={verReservaUsuario} />

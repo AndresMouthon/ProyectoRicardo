@@ -3,6 +3,7 @@ import { CiCalendarDate, CiUser } from "react-icons/ci";
 import { MdAddComment } from "react-icons/md";
 import { PiBusThin } from "react-icons/pi";
 import "../../../../assets/css/private/clients/reservations/FormContinueReservationClientComponent.css";
+import Spiner from "../../../../utils/tools/Spiner";
 
 export default function FormContinueReservationClientComponent({
   ciudad,
@@ -11,6 +12,7 @@ export default function FormContinueReservationClientComponent({
   handleChange,
   codigoViaje,
   registrarReserva,
+  loading,
 }) {
   const { cedula } = JSON.parse(localStorage.getItem("usuario"));
   return (
@@ -53,8 +55,15 @@ export default function FormContinueReservationClientComponent({
         <input type="number" placeholder="Digite la cantidad de pasajeros..." onChange={handleChange} name="pasajeros" />
       </span>
       <button className="btn-finalizar" onClick={() => registrarReserva(cedula, codigoViaje)}>
-        <MdAddComment className="icon" />
-        Realizar reserva
+        {
+          loading ? (
+            <Spiner />
+          ) : (
+            <>
+              <MdAddComment className="icon" /> Realizar reserva
+            </>
+          )
+        }
       </button>
     </div>
   );

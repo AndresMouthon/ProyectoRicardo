@@ -4,7 +4,7 @@
   align-items: flex-end;
   background-color: white;
   border: 1px solid #e5e7eb;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   box-shadow: 3px 3px 5px black;
   width: 60%;
   padding: 5px;
@@ -14,4 +14,22 @@
   background: transparent;
   color: #0c8bf3;
   cursor: pointer;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.noData {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: #546e7a;
 }

@@ -3,9 +3,12 @@ import { useEffect, useState } from "react";
 import { APIUSER } from "../../models/EnpointsModels";
 
 export default function useViaje() {
+
     const [viajes, setViajes] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     const getViajes = () => {
+        setLoading(true);
         axios
             .get(APIUSER.TRAVELS, {
                 headers: {
@@ -14,6 +17,7 @@ export default function useViaje() {
             })
             .then((response) => {
                 setViajes(response.data);
+                setLoading(false);
             })
             .catch((error) => {
                 console.log(error);
@@ -26,6 +30,7 @@ export default function useViaje() {
 
     return {
         viajes,
+        loading,
         setViajes,
     };
 }

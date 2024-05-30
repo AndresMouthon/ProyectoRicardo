@@ -33,6 +33,32 @@
   align-items: flex-start;
   justify-content: space-between;
 }
+.cardReservaContent .card .informationHistory {
+  padding: 10px;
+  width: 90%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.cardReservaContent .card .informationHistory .informationGroup {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+}
+.cardReservaContent .card .informationHistory .TitleHistory {
+  color: #90caf9;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.cardReservaContent .card .informationHistory .iconHistory {
+  font-size: 50px;
+  margin-right: 5px;
+}
 .cardReservaContent .card .informationCity .informationGroup {
   display: flex;
   flex-direction: row;

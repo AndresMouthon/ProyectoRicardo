@@ -4,13 +4,19 @@ import { IoEyeSharp } from "react-icons/io5";
 import '../../../../assets/css/private/clients/travels/TravelsCardsClientComponent.css';
 import { APIUSER } from '../../../../models/EnpointsModels';
 import TravelsOptionsClientComponent from './TravelsOptionsClientComponent';
+import LoadingComponent from '../../../../utils/tools/LoadingComponent';
 
-export default function TravelsCardsClientComponent({ viajes, agregarReservaLocalStorage }) {
+export default function TravelsCardsClientComponent({ viajes, agregarReservaLocalStorage, loading }) {
     return (
         <div className='cardContainer'>
             <div className="card">
                 <TravelsOptionsClientComponent />
             </div>
+            {loading && (
+                <div className="card">
+                    <LoadingComponent />
+                </div>
+            )}
             {viajes.map((viaje) => (
                 <div key={viaje.codigo} className="card">
                     <section className='imgCity'>

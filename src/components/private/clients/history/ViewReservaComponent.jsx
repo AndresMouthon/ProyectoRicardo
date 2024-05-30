@@ -1,15 +1,14 @@
 import React from 'react';
-import { FaRoute, FaUser } from "react-icons/fa";
-import { FaPeopleGroup } from "react-icons/fa6";
-import { FcMoneyTransfer } from "react-icons/fc";
+import {
+  FcBusinessman,
+  FcConferenceCall,
+  FcMoneyTransfer,
+  FcTimeline
+} from "react-icons/fc";
 import '../../../../assets/css/private/clients/history/ViewReservaComponent.css';
 import { APIUSER } from '../../../../models/EnpointsModels';
-import { FcBusinessman } from "react-icons/fc";
-import { FcConferenceCall } from "react-icons/fc";
-import { FcTimeline } from "react-icons/fc";
 
 export default function ViewReservaComponent({ reserva }) {
-  console.log(reserva);
   return (
     <div className='cardReservaContent'>
       <div className="card">

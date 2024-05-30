@@ -6,12 +6,16 @@ import useReserva from '../../../../hooks/private/useReserva';
 import useViaje from '../../../../hooks/private/useViaje';
 
 export default function TravelsClientPage() {
-    const { viajes } = useViaje();
+    const { viajes, loading } = useViaje();
     const { agregarReservaLocalStorage } = useReserva();
     return (
         <ContainerContent>
             <TravelsTitleClientComponent />
-            <TravelsCardsClientComponent viajes={viajes} agregarReservaLocalStorage={agregarReservaLocalStorage} />
+            <TravelsCardsClientComponent 
+                viajes={viajes} 
+                agregarReservaLocalStorage={agregarReservaLocalStorage} 
+                loading={loading}
+            />
         </ContainerContent>
     )
 }
